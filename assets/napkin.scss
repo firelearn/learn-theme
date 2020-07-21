@@ -1,0 +1,69 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+
+body.napkin{
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+
+    .section {
+        background: url('napkin/border.png') left bottom repeat-x;
+    }
+
+    .nav {
+        background: url('napkin/border.png') left bottom repeat-x;
+    }
+
+    .nav .topmenu .login {
+        background: url('napkin/button.png') no-repeat center center;
+        background-size: contain;
+        padding: 1em;
+    }
+
+    footer{
+        background: url('napkin/border.png') left top repeat-x;
+    }
+
+    .pageBack{
+        background-position: left top;
+        background-repeat: repeat;
+        background-size: auto;
+    }
+
+    .pageContent img {
+        outline: thick #446 solid;
+        max-height: 12em;
+    }
+
+    .toc {
+        background: url('napkin/border-vert.png') right top repeat-y;
+    }
+
+    .toc li.read, .toc li.read.active, .toc li.visited.active, .toc li.visited.active {
+        list-style-image: url('napkin/tick.png');
+    }
+    a, a:visited, .toc a, .toc a:visited, .toc a:active {
+        text-decoration: none;
+        color: navy;
+    }
+
+    .hamburger {
+        background: url('napkin/hamburger.png') no-repeat center right;
+        background-size: contain;
+        color: transparent;
+    }
+
+    /* hash? */
+    .moduleCompletion .unread {
+        background-color: white;
+    }
+    .moduleCompletion .started {
+        background: url('napkin/hash-yellow.png') no-repeat center center;
+        background-size: cover;
+    }
+    .moduleCompletion .complete {
+        background: url('napkin/hash-green.png') no-repeat center center;
+        background-size: cover;
+    }
+}

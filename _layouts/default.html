@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{site.title}} - {{page.description}}</title>
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha256-azvvU9xKluwHFJ0Cpgtf0CYzK7zgtOznnzxV4924X1w=" crossorigin="anonymous" />    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous">    
+    <!-- <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/assets/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/assets/napkin.css">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- <link rel="stylesheet" href="{{ "assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}"> -->
+  </head>
+  <body>
+    <div>
+      <div class="head-container {{page.class}}">
+        <nav id="navbar" class="navbar navbar-expand-md ">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span>Menu</span>
+
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </ul>
+          </div>
+        </nav>
+        <header >
+          <br/>
+          <h1 class="shadowed">{{page.title}}</h1>
+          <h2 class="inverse-shadowed">{{page.description}}</h2>
+        </header>
+      </div>
+      <section class="markdown-body page {{page.layoutclass}}">
+
+      {{ content }}
+
+      </section>
+      <br style="clear: both" />
+      <footer class="">
+          <div class="col-sm-2 col-sm-offset-2 text-center" >
+            <a href="https://twitter.com/PeterChch" rel="noopener noreferrer" >
+              <i class="fa fa-twitter fa-3x wow bounceIn"></i><br/>
+              <span>@PeterChch</span>
+            </a>
+          </div>
+          <div class="col-sm-2 text-center" >
+            <a href="mailto:info@haumohio.com" >
+              <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i><br/>
+              <span>info@haumohio.com</span>
+            </a>
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha256-63ld7aiYP6UxBifJWEzz87ldJyVnETUABZAYs5Qcsmc=" crossorigin="anonymous"></script>
+    
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src="{{ site.github.url }}/assets/js/google.js" ></script>
+  </body>
+</html>

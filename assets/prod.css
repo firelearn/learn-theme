@@ -1,0 +1,87 @@
+html,
+body {
+    font-family: "Avenir", "Helvetica Neue", Helvetica, sans-serif;
+    color: #343a40;
+    background: #fff;
+}
+
+.section {
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    border-bottom: 1px #eee solid;
+}
+
+.login {
+    border: 1px solid #eee;
+    border-radius: 0.3em;
+}
+
+.page{
+    border-bottom: 1px solid #eee;
+}
+
+.toc.closed{
+    background-color: #eee;
+}
+
+.toc a.active, .toc li.active{        
+    outline: 1px #eee solid;
+    padding: 0.2em;
+}
+
+.toc li.active > a, .toc a.active{
+    font-size: 120%;
+}
+
+.toc li.read, .toc li.read.active {
+    list-style-image: url('/tick.png');
+}
+
+.pageBack{
+    border-left: 1px #eee solid;
+}
+
+.pageContent{
+    font-family: 'Lora', serif;
+}
+
+.jumbo {
+    font-family: "Avenir", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.moduleCompletion > li{
+    border: 1px #bbb solid;
+    border-radius: 1em;
+    box-shadow: 2px 2px 4px #ccc;
+}
+
+ul.lessonCompletion {
+    font-family: "Avenir", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+ul.lessonCompletion > li {
+    border-radius: 0.4em;
+    border: 1px solid #ddd;
+}
+
+.moduleCompletion .unread {
+    background-color: white;
+}
+.moduleCompletion .started {
+    background-color: lightgoldenrodyellow;
+}
+.moduleCompletion .complete {
+    background-color: lightgreen;
+}
+
+@media (max-width: 768px) {
+    .toc {
+        background-color: #eee;
+    }
+    .toc.closed{
+        background-color: transparent;
+    }
+
+}
