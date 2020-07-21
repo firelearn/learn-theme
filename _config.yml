@@ -1,0 +1,12 @@
+title: Learn Theme
+description: Learning site on FIRE!
+exclude: [README.md]
+include: [".well-known"]
+
+# applies pretty for all
+permalink: pretty
+
+plugins:
+  - jekyll-relative-links
+
+learntrack: http://localhost:7071/api/
