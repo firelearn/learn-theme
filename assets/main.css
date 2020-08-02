@@ -24,6 +24,16 @@ h1 {
     vertical-align: middle;
 }
 
+.login img {
+    display: none; 
+    width: 1.4em; 
+    height:1.4em;
+    border-radius: 0.6em;
+}
+.login.loggedin img{
+    display: inline;
+}
+
 h2 input.silentInput {
     font-size: inherit;
     font-weight: inherit;
