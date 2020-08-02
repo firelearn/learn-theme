@@ -1,0 +1,57 @@
+<div class="toc">
+    <p class="hamburger" onclick="this.parentElement.classList.toggle('closed')">=</p>
+    {% assign filename = page.path | split: '/' | last %}
+    {% assign url_parts = page.url | split: '/' %}
+    {% assign url_parts_size = url_parts | size %}
+    {% assign rm = url_parts | last | append: '/' %}
+    {% assign base_url = page.url | replace: rm %}
+    {% assign base_title = site.pages | where: 'url', base_url | first %}
+    {% if filename == 'index.md' %}
+        {% assign isIndex = 'yes' %}
+        {% assign offset = 1 %}
+    {% else %}
+        {% assign isIndex = 'no' %}
+        {% assign offset = 0 %}
+    {% endif %}
+    {% if page.dir == '/' %}
+        {% assign isIndex = 'yes!' %}
+        {% assign offset = 2 %}
+    {% endif %}
+    {% unless page.dir == '/'%}
+        <p class="toggleMe"><i><a href="{{base_url | relative_url}}">.../{{base_title.title}}</a></i></p>
+    {% endunless %}
+    
+    {% assign sorted_pages = site.pages | sort: 'url' | where_exp: 'item', "layout <> 'default'" %}
+    <ul class="containsActive">
+        {% for sect in sorted_pages %}
+        {% if sect.url contains base_url %}
+        {% unless isIndex == 'yes' and sect.dir == page.dir %}
+            {% assign sect_parts_size =  sect.url | split: '/' | size | minus: offset %}
+            {% if sect_parts_size == url_parts_size%}
+                {% if sect.path contains "index.md" %}
+                    <li>[<a href="{{sect.url | relative_url}}">{{sect.title}}</a>]</li>
+                {% else %}
+                    <li class="active">
+                        <a href="{{sect.url | relative_url}}">{{sect.title}}</a>
+                    </li>
+                {% endif %}
+            {% else %}
+                <!-- <li>NOPE: <a href="{{sect.url | relative_url}}">{{sect.title}} ({{sect_parts_size}} == {{url_parts_size}}) </a></li> -->
+            {% endif %}
+        {% endunless %}
+        {% endif %}
+        {% endfor %} 
+    </ul>
+    <!-- <div class="toggleMe">
+        <hr/>
+        <ul style="display: block;">
+            <li>RM: {{rm}}</li>
+            <li>BASE: {{base_url}}</li>
+            <li>DIR: {{page.dir}}</li>
+            <li>PATH: {{page.path}}</li>
+            <li>URL: {{page.url}}</li>
+            <li>IsIndex: {{isIndex}}</li>
+            <li>Offset: {{offset}}</li>
+        </ul>
+    </div> -->
+</div>
