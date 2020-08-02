@@ -22,7 +22,8 @@ var userChanged = function (user) {
     console.log('User now: ', user);
     googleUser = user;
     googleUserName = user.getBasicProfile().getName();
-    document.getElementById('signInButton').innerText = user.getBasicProfile().getName();
+    document.getElementById('signInLabel').innerText = user.getBasicProfile().getName();
+    document.getElementById('signInPic').src = user.getBasicProfile().getImageUrl();
     makeVisit(user.getId());
     loadVisited(user.getId(), $(".toc"));
 };    
