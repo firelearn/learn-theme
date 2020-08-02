@@ -23,6 +23,6 @@ var userChanged = function (user) {
     googleUser = user;
     googleUserName = user.getBasicProfile().getName();
     document.getElementById('signInButton').innerText = user.getBasicProfile().getName();
-    makeVisit(googleUser.Ea);
-    loadVisited(googleUser.Ea, $(".toc"));
+    makeVisit(user.getId());
+    loadVisited(user.getId(), $(".toc"));
 };    

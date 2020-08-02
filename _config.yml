@@ -8,5 +8,3 @@ permalink: pretty
 
 plugins:
   - jekyll-relative-links
-
-learntrack: http://localhost:7071/api/
