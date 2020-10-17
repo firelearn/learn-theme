@@ -159,10 +159,6 @@ footer {
     overflow: hidden;
     background: rgba(255,255,255,0.6);
 }
-.anon .pageContent {
-  display: none;
-}
-
 
 .pageContent .two-column {
     display: flex;
