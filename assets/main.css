@@ -129,6 +129,13 @@ footer {
     display: block;
 }
 
+.anon .toc li {
+  display: none;
+}
+.anon .toc li.ua_anon {
+  display: list-item;
+}
+
 .rhs img{
     max-width: 100%;
 }
@@ -155,6 +162,8 @@ footer {
 .anon .pageContent {
   display: none;
 }
+
+
 .pageContent .two-column {
     display: flex;
     flex-direction: row;

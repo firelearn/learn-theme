@@ -29,9 +29,9 @@
             {% assign sect_parts_size =  sect.url | split: '/' | size | minus: offset %}
             {% if sect_parts_size == url_parts_size%}
                 {% if sect.path contains "index.md" %}
-                    <li>[<a href="{{sect.url | relative_url}}">{{sect.title}}</a>]</li>
+                    <li>[<a href="{{sect.url | relative_url}}" class="ua_{{sect.user_access}}">{{sect.title}}</a>]</li>
                 {% else %}
-                    <li class="active">
+                    <li class="active ua_{{sect.user_access}}" data_user_access="{{sect.user_access}}">
                         <a href="{{sect.url | relative_url}}">{{sect.title}}</a>
                     </li>
                 {% endif %}
