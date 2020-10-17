@@ -129,11 +129,11 @@ footer {
     display: block;
 }
 
-.anon .toc li {
+.anon .ua_ {
   display: none;
 }
-.anon .toc li.ua_anon {
-  display: list-item;
+.anon .ua_anon {
+  display: inherit;
 }
 
 .rhs img{
