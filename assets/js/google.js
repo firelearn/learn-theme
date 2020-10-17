@@ -15,6 +15,7 @@ var initSigninV2 = function() {
     // Sign in the user if they are currently signed in.
     if (auth2.isSignedIn.get() == true) {
         auth2.signIn();
+        $('body').removeClass('anon');
     }
 };
 
