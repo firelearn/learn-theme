@@ -13,7 +13,7 @@ var initSigninV2 = function() {
     auth2.attachClickHandler(document.getElementById('signInButton'));
     auth2.currentUser.listen(userChanged);
     // Sign in the user if they are currently signed in.
-    $('body').addClass('unchecked');
+    $('body').removeClass('unchecked');
     if (auth2.isSignedIn.get() == true) {
         auth2.signIn();
         $('body').addClass('signedIn');
