@@ -129,7 +129,7 @@ footer {
     display: block;
 }
 
-.anon .ua_ {
+.anon .ua_, .unchecked .ua_, .unchecked .ua_anon {
   display: none;
 }
 .anon .ua_anon {
