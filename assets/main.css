@@ -132,9 +132,13 @@ footer {
 .anon .ua_, .unchecked .ua_, .unchecked .ua_anon {
   display: none;
 }
-.anon .ua_anon {
+.pageRestriction {
+  display: none;
+}
+.anon .pageRestriction {
   display: inherit;
 }
+
 
 .rhs img{
     max-width: 100%;

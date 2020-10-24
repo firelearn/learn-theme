@@ -29,7 +29,8 @@ var userChanged = function (user) {
     document.getElementById('signInButton').classList.add("loggedin")
     document.getElementById('signInLabel').innerText = user.getBasicProfile().getName();
     document.getElementById('signInPic').src = user.getBasicProfile().getImageUrl();
-    $('body').removeClass('anon');
+    $('body').removeClass('unchecked');
+    $('body').addClass('signedIn');
     makeVisit(user.getId());
     loadVisited(user.getId(), $(".toc"));
 };    
