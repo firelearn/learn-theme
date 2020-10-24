@@ -206,6 +206,13 @@ ul.lessonCompletion > li {
     overflow: hidden;
 }
 
+.quiz form li {
+  list-style-type: decimal;
+}
+.quiz form li > ol > li {
+  list-style-type: lower-alpha;
+}
+
 @media (max-width: 768px) {
     .pageContent{
         flex-direction: column;
