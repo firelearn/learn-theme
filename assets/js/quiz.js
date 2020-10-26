@@ -12,8 +12,6 @@ let learntrack_quiz = {
     }, 
   {}),
   showResult: function(frm, result){
-    let btn = frm.find('input[type="submit"]')
-    alert(JSON.stringify(result));
     result.correct.forEach(q => {
       $(`#q_${q}`).addClass('answered_correct')
     });
@@ -23,6 +21,7 @@ let learntrack_quiz = {
         $(`#q_${q.name} input[value="${correctAnswer}"]`).parent().addClass('correct_answer')
       }
     });
+    let btn = frm.find('input[type="submit"]')
     btn.remove()
     frm.append($(`<p>${result.correct.length} out of ${result.questions.length}</p>`))
   },
