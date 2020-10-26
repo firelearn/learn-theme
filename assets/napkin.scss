@@ -66,4 +66,11 @@ body.napkin{
         background: url('napkin/hash-green.png') no-repeat center center;
         background-size: cover;
     }
+
+    .answered_correct {
+        outline: 3px lightgreen solid;
+    }
+    .answered .correct_answer{
+      outline: 1px red dotted;
+    }
 }

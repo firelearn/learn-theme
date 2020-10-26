@@ -11,7 +11,9 @@ let learntrack_quiz = {
       return objectsByKeyValue
     }, 
   {}),
-
+  showResult: function(result){
+    alert(JSON.stringify(result));
+  },
   submitQuiz: function(ev) {
     ev.preventDefault()
     let frm = $(this)
@@ -19,6 +21,7 @@ let learntrack_quiz = {
     let data = frm.serializeArray()
     let grouped = learntrack_quiz.groupMap('name', 'value')(data)
     let correct = Object.keys(grouped).filter(nm => JSON.stringify(learntrack_quiz.quiz_answers[nm] ?? []) == JSON.stringify(grouped[nm]))
+    learntrack_quiz.showResult(correct);
     let num_answers = Object.keys(learntrack_quiz.quiz_answers).length
     let num_correct = correct.length
     let response = {
