@@ -35,8 +35,10 @@ var userChanged = function (user) {
       $('body').addClass('signedIn');
       $('body').removeClass('anon');
       $('body').removeClass('unchecked');
-      makeVisit(user.getId());
-      loadVisited(user.getId(), $(".toc"));
+      let token = user.getAuthResponse().id_token;
+      visiting.makeVisit(token);
+      learntrack_quiz.userJwt = token;
+      visiting.loadVisited(token, $(".toc"));
     }else{
       console.log("Not currently signed in");
       $('body').addClass('anon');
