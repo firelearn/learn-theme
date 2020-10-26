@@ -37,7 +37,7 @@ var userChanged = function (user) {
       $('body').removeClass('unchecked');
       let token = user.getAuthResponse().id_token;
       visiting.makeVisit(token);
-      if(learntrack_quiz) learntrack_quiz.userJwt = token;
+      if(typeof learntrack_quiz !== 'undefined') learntrack_quiz.userJwt = token;
       visiting.loadVisited(token, $(".toc"));
     }else{
       console.log("Not currently signed in");
