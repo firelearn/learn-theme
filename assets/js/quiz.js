@@ -11,8 +11,20 @@ let learntrack_quiz = {
       return objectsByKeyValue
     }, 
   {}),
-  showResult: function(result){
+  showResult: function(frm, result){
+    let btn = frm.find('input[type="submit"]')
     alert(JSON.stringify(result));
+    result.correct.forEach(q => {
+      $(`#q_${q}`).addClass('answered_correct')
+    });
+    result.questions.forEach(q => {
+      if(!result.correct.includes(q.name)){
+        let correctAnswer = learntrack_quiz.quiz_answers[q.name][0]
+        $(`#q_${q.name} input[value="${correctAnswer}"]`).parent().addClass('correct_answer')
+      }
+    });
+    btn.remove()
+    frm.append($(`<p>${result.correct.length} out of ${result.questions.length}</p>`))
   },
   submitQuiz: function(ev) {
     ev.preventDefault()
@@ -21,7 +33,7 @@ let learntrack_quiz = {
     let data = frm.serializeArray()
     let grouped = learntrack_quiz.groupMap('name', 'value')(data)
     let correct = Object.keys(grouped).filter(nm => JSON.stringify(learntrack_quiz.quiz_answers[nm] ?? []) == JSON.stringify(grouped[nm]))
-    learntrack_quiz.showResult(correct);
+    learntrack_quiz.showResult(frm, {'correct': correct, 'questions': data});
     let num_answers = Object.keys(learntrack_quiz.quiz_answers).length
     let num_correct = correct.length
     let response = {
@@ -51,6 +63,7 @@ let learntrack_quiz = {
       // console.log(`QUIZ: Preparing question ${name}`)
       container.removeAttr('name')
       container.removeAttr('answer')
+      container.parent().attr('id', 'q_' + name)
       learntrack_quiz.quiz_answers[name] = (learntrack_quiz.quiz_answers[name] ?? []).concat(answer)
       $(this).find('li').each(function() {
         let orig = $(this).html()
