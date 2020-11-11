@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "learn-theme"
-  spec.version       = "0.1.1"
+  spec.version       = "0.1.2"
   spec.authors       = ["peterb"]
   spec.email         = ["haumohio@gmail.com"]
 
